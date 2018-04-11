@@ -3,12 +3,18 @@
   <head>
     <title>Blog</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+  	<div class='container'>
+  	  <nav class="nav">
+        <a class="nav-link active" href= '<%= articles_path %>'>Все статьи</a>
+        <%= link_to 'Новая статья', new_article_path, class:'btn btn-outline-primary' %>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
